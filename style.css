@@ -1,4 +1,16 @@
 /* Global styles */
+@font-face {
+  font-family: 'HelveticaNeueThin';
+  src: url('HelveticaNeueThin.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Apply this font to EVERYTHING on the page */
+html, body, * {
+  font-family: 'HelveticaNeueThin', sans-serif;
+}
+
 body {
   font-family: sans-serif;
   margin: 0;
