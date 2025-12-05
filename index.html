@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-us">
-<head>
+  <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sierra Seetin</title>
@@ -8,108 +8,109 @@
 </head>
 
   <body>
-    <!-- Navbar -->
-    <div class="navbar">
-      <div class="navbar-inner">
-        <div class="nav-left">
-          <a href="/" class="nav-logo">Sierra Seetin</a>
+   
+    <div class="page">
+
+      <!-- HERO / LANDING -->
+      <header class="hero">
+        <div class="hero-inner">
+          <h1 class="hero-name">sierra seetin</h1>
+
+          <nav class="hero-nav">
+            <button class="nav-link active" data-section="about">about</button>
+            <button class="nav-link" data-section="work">work</button>
+            <button class="nav-link" data-section="contact">contact</button>
+          </nav>
         </div>
-        <div class="nav-right">
-          <a href="#about">About</a>
-          <a href="#film">Film &amp; Video</a>
-          <a href="#photo">Photography</a>
-          <a href="#experience">Experience</a>
-          <a href="#contact">Contact</a>
-        </div>
-      </div>
+      </header>
+
+      <!-- MAIN CONTENT -->
+      <main class="main">
+
+        <!-- IMAGE GRID / CAROUSEL AREA -->
+        <section class="section gallery-section">
+          <div class="gallery-grid">
+            <div class="gallery-item">image 01</div>
+            <div class="gallery-item">image 02</div>
+            <div class="gallery-item">image 03</div>
+            <div class="gallery-item">image 04</div>
+            <div class="gallery-item">image 05</div>
+            <div class="gallery-item">image 06</div>
+          </div>
+          <!-- You can later swap the placeholders with <img> tags or JS carousels -->
+        </section>
+
+        <!-- ABOUT -->
+        <section id="about" class="section section-panel visible">
+          <h2>about</h2>
+          <p>
+            I am Sierra, a filmmaker and business student trying to make my life look slightly more organized than my Google Drive. 
+            I study Film and New Media and Business at Wheaton College in Massachusetts and grew up in Queens, which means I walk fast, talk fast and accidentally treat every to-do list like a side quest. 
+            I like cameras, stories, tech experiments and any excuse to turn a random idea into something on a screen.
+          </p>
+        </section>
+
+        <!-- WORK -->
+        <section id="work" class="section section-panel">
+          <h2>work</h2>
+          <p>
+            I direct, shoot and edit short films, documentary pieces and little internet projects that live somewhere between personal and professional. 
+            My favorite sets feel like organized chaos where everyone knows what they are doing but still laughs a lot.
+          </p>
+          <ul class="work-list">
+            <li><strong>short films</strong> · narrative and character driven pieces</li>
+            <li><strong>documentary</strong> · real people, real places, good lighting</li>
+            <li><strong>photography</strong> · behind the scenes, portraits, small details</li>
+          </ul>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact" class="section section-panel">
+          <h2>contact</h2>
+          <p>
+            for collaborations, projects or just to talk films and cameras:
+          </p>
+          <p>
+            <a href="mailto:sierraseetin@gmail.com">sierraseetin@gmail.com</a>
+          </p>
+          <p>
+            you can also find me on 
+            <a href="#" target="_blank" rel="noopener">linkedin</a>
+            and 
+            <a href="#" target="_blank" rel="noopener">my film portfolio</a>.
+          </p>
+        </section>
+
+      </main>
+
+      <footer class="footer">
+        <p>© 2025 sierra seetin</p>
+      </footer>
     </div>
 
-    <div class="content">
-      <!-- Hero -->
-      <section id="hero" class="hero">
-        <h1 class="main-header">Hello, I'm Sierra Seetin.</h1>
-        <p class="tagline">
-          Filmmaker, photographer and business student figuring out how to make art that pays for its own snacks.
-        </p>
-      </section>
+    <!-- tiny JS just to toggle between about / work / contact panels -->
+    <script>
+      const buttons = document.querySelectorAll('.nav-link');
+      const panels = document.querySelectorAll('.section-panel');
 
-      <!-- About -->
-      <section id="about" class="about">
-        <h2>About</h2>
-        <p>
-          I am Sierra, a Film and New Media and Business double major at Wheaton College in Massachusetts who somehow
-          turned an obsession with movies, tech and spreadsheets into a personality. I grew up in Queens so I walk fast,
-          talk fast and tend to collect projects the way other people collect keychains. I like telling stories on
-          screen, building things in labs and making organized chaos look intentional.
-        </p>
-      </section>
+      buttons.forEach(button => {
+        button.addEventListener('click', () => {
+          const target = button.getAttribute('data-section');
 
-      <!-- Film & Video -->
-      <section id="film" class="film">
-        <h2>Film &amp; Video</h2>
-        <p>
-          I direct, shoot and edit short films, documentaries and branded pieces. Below are a few recent projects.
-        </p>
-        <ul class="project-list">
-          <li>
-            <strong>Project Title 1</strong> – Short narrative film about <em>…</em>
-            <br><a href="#">Watch film</a>
-          </li>
-          <li>
-            <strong>Project Title 2</strong> – Documentary piece for <em>…</em>
-            <br><a href="#">Watch film</a>
-          </li>
-          <li>
-            <strong>Project Title 3</strong> – Experimental video exploring <em>…</em>
-            <br><a href="#">Watch film</a>
-          </li>
-        </ul>
-      </section>
+          // active button state
+          buttons.forEach(b => b.classList.remove('active'));
+          button.classList.add('active');
 
-      <!-- Photography -->
-      <section id="photo" class="photo">
-        <h2>Photography</h2>
-        <p>
-          When I am not on set, I am usually behind a camera anyway. I shoot behind the scenes, portraits and small
-          moments that feel like stills from a film.
-        </p>
-        <p>
-          Gallery coming soon. For now, you can see selected work on
-          <a href="#">my photo portfolio</a>.
-        </p>
-      </section>
-
-      <!-- Experience -->
-      <section id="experience" class="experience">
-        <h2>Experience</h2>
-        <p>
-          I like being in the middle of things, so I split my time between sets, classrooms and labs.
-        </p>
-        <ul class="experience-list">
-          <li><strong>Film &amp; New Media</strong> – Student filmmaker and production assistant on student and professional sets.</li>
-          <li><strong>Business &amp; Management</strong> – Marketing, project coordination and a slightly alarming love of Google Sheets.</li>
-          <li><strong>Fab Lab / Tech</strong> – Digital fabrication, 3D printing and making physical versions of ideas that started in my Notes app.</li>
-        </ul>
-      </section>
-
-      <!-- Contact -->
-      <section id="contact" class="contact">
-        <h2>Contact</h2>
-        <p>
-          For collaborations, commissions or film chat, you can reach me at
-          <a href="mailto:sierraseetin@gmail.com">sierraseetin@gmail.com</a>.
-        </p>
-        <p>
-          You can also find me on
-          <a href="#">LinkedIn</a>
-          and
-          <a href="#">my film portfolio</a>.
-        </p>
-      </section>
-    </div>
-
-    <footer>
-      <p>Copyright 2025 Sierra Seetin · Creative Commons Attribution Non Commercial</p>
-    </footer>
+          // show matching panel
+          panels.forEach(panel => {
+            if (panel.id === target) {
+              panel.classList.add('visible');
+            } else {
+              panel.classList.remove('visible');
+            }
+          });
+        });
+      });
+    </script>
   </body>
 </html>
