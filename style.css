@@ -80,10 +80,10 @@ body {
   padding: 2rem 6vw 4rem;
 }
 
-/* gallery / carousel grid */
+/* big image grid */
 
-.gallery-section {
-  margin-bottom: 3rem;
+.hero-carousel {
+  padding: 2rem 6vw;
 }
 
 .gallery-grid {
@@ -93,14 +93,65 @@ body {
 }
 
 .gallery-item {
+  position: relative;
+  overflow: hidden;
   border: 1px solid #333;
-  aspect-ratio: 4 / 3;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  aspect-ratio: 16 / 9;
+}
+
+.gallery-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+/* hover: image gets larger */
+
+.gallery-item:hover .gallery-image {
+  transform: scale(1.08);
+  filter: brightness(0.9);
+}
+
+/* caption overlay */
+
+.gallery-caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0.5rem 0.75rem;
   font-size: 0.8rem;
-  text-transform: lowercase;
-  color: #777;
+  color: #ffffff;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.9);
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.8),
+    rgba(0, 0, 0, 0)
+  );
+}
+
+/* show caption on hover */
+
+.gallery-item:hover .gallery-caption {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* responsive */
+
+@media (max-width: 768px) {
+  .hero-carousel {
+    padding-inline: 1.5rem;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 /* later you can replace .gallery-item text with <img> tags */
