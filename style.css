@@ -48,7 +48,6 @@ body {
 .hero-name {
   font-size: clamp(3rem, 12vw, 6rem);
   font-family: 'SierraNeueThin', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
-  letter-spacing: 0.12em;
   text-transform: lowercase;
   margin: 0 0 1.5rem 0;
 }
