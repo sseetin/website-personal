@@ -54,7 +54,7 @@ a {
 
 .hero-name {
   font-size: clamp(3rem, 12vw, 6rem);
-  letter-spacing: 0.12em;
+  font-family: 'SierraNeueThin';
   text-transform: lowercase;
   margin: 0 0 1.5rem 0;
 }
