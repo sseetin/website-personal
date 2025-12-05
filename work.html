@@ -1,1 +1,208 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Work · Sierra Seetin</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
+  <body>
+    <div class="page">
+      <!-- HERO / HEADER (smaller nav but same vibe) -->
+      <header class="hero">
+        <div class="hero-inner">
+          <h1 class="hero-name">sierra seetin</h1>
+          <nav class="hero-nav">
+            <a class="nav-link" href="index.html#about">about</a>
+            <a class="nav-link" href="work.html">work</a>
+            <a class="nav-link" href="index.html#contact">contact</a>
+          </nav>
+        </div>
+      </header>
+
+      <main class="main">
+        <section class="section filmography">
+          <h2>filmography</h2>
+
+          <!-- FILTER BUTTONS -->
+          <div class="filter-bar">
+            <button class="filter-btn active" data-filter="all">all</button>
+            <button class="filter-btn" data-filter="director">director</button>
+            <button class="filter-btn" data-filter="dop">cinematography</button>
+            <button class="filter-btn" data-filter="editor">editor</button>
+            <button class="filter-btn" data-filter="sound">sound</button>
+            <button class="filter-btn" data-filter="prod-des">
+              prod design
+            </button>
+            <button class="filter-btn" data-filter="producer">producing</button>
+            <button class="filter-btn" data-filter="pa">pa / crew</button>
+          </div>
+
+          <!-- HIGHLIGHTED GRID (latest → oldest, with your selected notes) -->
+          <div class="film-grid">
+            <!-- 2026 -->
+            <div class="film-card pa" data-year="2026">
+              <h3>Senior Thesis</h3>
+              <p class="role">Assistant Director</p>
+              <p class="date">Feb 2026</p>
+            </div>
+
+            <!-- 2025 -->
+            <div class="film-card producer" data-year="2025">
+              <h3>Doors</h3>
+              <p class="role">Producer</p>
+              <p class="note">
+                Crowdfunded $2k, recruited 15 crew, secured location permits, led
+                weekly production meetings.
+              </p>
+              <p class="date">Nov 2025</p>
+            </div>
+
+            <div class="film-card pa" data-year="2025">
+              <h3>Juice Cleanse</h3>
+              <p class="role">Production Assistant</p>
+              <p class="note">
+                Coordinated communication between AD, actors, and all
+                departments on an indie feature.
+              </p>
+              <p class="date">Nov 2025</p>
+            </div>
+
+            <div class="film-card director producer" data-year="2025">
+              <h3>Beneath the Nail</h3>
+              <p class="role">Writer, Producer, Director</p>
+              <p class="note">
+                Screened at end-of-semester Production II showcase.
+              </p>
+              <p class="date">Oct 2025</p>
+            </div>
+
+            <div class="film-card producer" data-year="2025">
+              <h3>Dubaku Brothers</h3>
+              <p class="role">Associate Producer</p>
+              <p class="note">
+                Scheduled 27 crew; managed 60+ extras; reduced catering cost 20%
+                on a $7k budget.
+              </p>
+              <p class="date">Apr 2025</p>
+            </div>
+
+            <div class="film-card prod-des" data-year="2025">
+              <h3>The Little Guy</h3>
+              <p class="role">Production Designer</p>
+              <p class="note">
+                Led 3-person art team on a GFS $10k short; managed $700 budget
+                and full design execution.
+              </p>
+              <p class="date">Aug 2025</p>
+            </div>
+
+            <div class="film-card sound" data-year="2024">
+              <h3>Doll</h3>
+              <p class="role">Sound</p>
+              <p class="note">GFS narrative film with a $10k budget.</p>
+              <p class="date">Jul 2024</p>
+            </div>
+
+            <div class="film-card dop editor sound" data-year="2024">
+              <h3>Chasing Shadows</h3>
+              <p class="role">
+                Director of Photography, Editor, Sound
+              </p>
+              <p class="note">
+                Best Cinematography at the 3rd Annual WOSCARS.
+              </p>
+              <p class="date">Mar 2024</p>
+            </div>
+
+            <div class="film-card writer director" data-year="2023">
+              <h3>Beauty Marks</h3>
+              <p class="role">Writer, Director</p>
+              <p class="note">7k+ views on YouTube.</p>
+              <p class="date">Jul 2023</p>
+            </div>
+
+            <div class="film-card dop editor sound prod-des" data-year="2023">
+              <h3>Grounded</h3>
+              <p class="role">
+                Director of Photography, Editor, Sound, Production Design
+              </p>
+              <p class="note">
+                Winner, 5th Annual NYC Public School Film Festival.
+              </p>
+              <p class="date">Mar 2023</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- FULL FILMOGRAPHY LIST -->
+        <section class="section full-filmography">
+          <h2>full filmography</h2>
+
+          <ul class="film-list">
+            <!-- 2025 -->
+            <li><strong>Roomies</strong> · Production Design (2025)</li>
+            <li>
+              <strong>All My Favorite Jazz Musicians Are Dead</strong> · Sound
+              (2025)
+            </li>
+            <li><strong>Naked and Unafraid</strong> · Director of Photography (2025)</li>
+            <li><strong>Aliens Speak Spanish</strong> · Director of Photography (2025)</li>
+            <li><strong>Just Call Her</strong> · Production Designer (2025)</li>
+            <li><strong>Night Moves</strong> · Gaffer, Grip (2025)</li>
+            <li><strong>Auld Acquaintance</strong> · Sound (2025)</li>
+
+            <!-- 2024 -->
+            <li>
+              <strong>The Weight of Absence</strong> · Production Design (2024)
+            </li>
+            <li><strong>Coney Island</strong> · Editor, Sound (2024)</li>
+            <li><strong>2009</strong> · Co-Writer, Editor, Sound (2024)</li>
+            <li><strong>They Have a Blast</strong> · Writer, Director (2024)</li>
+            <li><strong>Our Fundamental Forces</strong> · Sound (2024)</li>
+
+            <!-- 2023 -->
+            <li><strong>Mirrorball</strong> · Editor, Sound (2023)</li>
+            <li><strong>Coma</strong> · Writer, Director, Sound (2023)</li>
+            <li><strong>Congee</strong> · Production Design (2023)</li>
+            <li><strong>Worse Case Scenario</strong> · Production Assistant (2023)</li>
+            <li>
+              <strong>Four Birds</strong> · Co-Writer, Editor, Sound,
+              Production Design (2023)
+            </li>
+          </ul>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <p>© 2025 sierra seetin</p>
+      </footer>
+    </div>
+
+    <!-- filmography filters only on work page -->
+    <script>
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      const cards = document.querySelectorAll('.film-card');
+
+      filterBtns.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const filter = btn.dataset.filter;
+
+          filterBtns.forEach((b) => b.classList.remove('active'));
+          btn.classList.add('active');
+
+          cards.forEach((card) => {
+            if (filter === 'all') {
+              card.style.display = 'block';
+            } else {
+              card.style.display = card.classList.contains(filter)
+                ? 'block'
+                : 'none';
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
