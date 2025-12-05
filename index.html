@@ -1,145 +1,75 @@
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sierra Seetin</title>
-  <link rel="stylesheet" href="style.css">
-</head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sierra Seetin</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
   <body>
-   
     <div class="page">
-
       <!-- HERO / LANDING -->
       <header class="hero">
         <div class="hero-inner">
           <h1 class="hero-name">sierra seetin</h1>
 
+          <!-- nav now uses links instead of JS buttons -->
           <nav class="hero-nav">
-            <button class="nav-link active" data-section="about">about</button>
-            <button class="nav-link" data-section="work">work</button>
-            <button class="nav-link" data-section="contact">contact</button>
+            <a class="nav-link" href="#about">about</a>
+            <a class="nav-link" href="work.html">work</a>
+            <a class="nav-link" href="#contact">contact</a>
           </nav>
         </div>
       </header>
 
       <!-- MAIN CONTENT -->
       <main class="main">
-
-        <!-- IMAGE GRID / CAROUSEL AREA -->
-       <section class="hero-carousel">
-  <div class="gallery-grid">
-    <div class="gallery-item">
-      <img src="still-1.jpg" alt="Film still 1" class="gallery-image">
-      <div class="gallery-caption">short film · night exterior</div>
-    </div>
-    <div class="gallery-item">
-      <img src="still-2.jpg" alt="Film still 2" class="gallery-image">
-      <div class="gallery-caption">doc moment · interview</div>
-    </div>
-    <div class="gallery-item">
-      <img src="still-3.jpg" alt="Film still 3" class="gallery-image">
-      <div class="gallery-caption">behind the scenes</div>
-    </div>
-    <div class="gallery-item">
-      <img src="still-4.jpg" alt="Film still 4" class="gallery-image">
-      <div class="gallery-caption">studio shoot</div>
-    </div>
-    <div class="gallery-item">
-      <img src="still-5.jpg" alt="Film still 5" class="gallery-image">
-      <div class="gallery-caption">on location</div>
-    </div>
-    <div class="gallery-item">
-      <img src="still-6.jpg" alt="Film still 6" class="gallery-image">
-      <div class="gallery-caption">production still</div>
-    </div>
-    <div class="gallery-item">
-      <img src="still-7.jpg" alt="Film still 7" class="gallery-image">
-      <div class="gallery-caption">character close up</div>
-    </div>
-    <div class="gallery-item">
-      <img src="still-8.jpg" alt="Film still 8" class="gallery-image">
-      <div class="gallery-caption">quiet moment</div>
-    </div>
-    <div class="gallery-item">
-      <img src="still-9.jpg" alt="Film still 9" class="gallery-image">
-      <div class="gallery-caption">final frame</div>
-    </div>
-  </div>
-</section>
-
-        <!-- ABOUT -->
-        <section id="about" class="section section-panel visible">
-          <h2>about</h2>
-          <p>
-            I am Sierra, a filmmaker and business student trying to make my life look slightly more organized than my Google Drive. 
-            I study Film and New Media and Business at Wheaton College in Massachusetts and grew up in Queens, which means I walk fast, talk fast and accidentally treat every to-do list like a side quest. 
-            I like cameras, stories, tech experiments and any excuse to turn a random idea into something on a screen.
-          </p>
+        <!-- IMAGE GRID / STILLS (HOME ONLY) -->
+        <section class="section gallery-section">
+          <div class="gallery-grid">
+            <div class="gallery-item">image 01</div>
+            <div class="gallery-item">image 02</div>
+            <div class="gallery-item">image 03</div>
+            <div class="gallery-item">image 04</div>
+            <div class="gallery-item">image 05</div>
+            <div class="gallery-item">image 06</div>
+          </div>
         </section>
 
-        <!-- WORK -->
-        <section id="work" class="section section-panel">
-          <h2>work</h2>
+        <!-- ABOUT -->
+        <section id="about" class="section">
+          <h2>about</h2>
           <p>
-            I direct, shoot and edit short films, documentary pieces and little internet projects that live somewhere between personal and professional. 
-            My favorite sets feel like organized chaos where everyone knows what they are doing but still laughs a lot.
+            I am Sierra, a filmmaker and business student trying to make my life
+            look slightly more organized than my Google Drive. I study Film and
+            New Media and Business at Wheaton College in Massachusetts and grew
+            up in Queens, which means I walk fast, talk fast and accidentally
+            treat every to-do list like a side quest. I like cameras, stories,
+            tech experiments and any excuse to turn a random idea into something
+            on a screen.
           </p>
-          <ul class="work-list">
-            <li><strong>short films</strong> · narrative and character driven pieces</li>
-            <li><strong>documentary</strong> · real people, real places, good lighting</li>
-            <li><strong>photography</strong> · behind the scenes, portraits, small details</li>
-          </ul>
         </section>
 
         <!-- CONTACT -->
-        <section id="contact" class="section section-panel">
+        <section id="contact" class="section">
           <h2>contact</h2>
-          <p>
-            for collaborations, projects or just to talk films and cameras:
-          </p>
+          <p>for collaborations, projects or just to talk films and cameras:</p>
           <p>
             <a href="mailto:sierraseetin@gmail.com">sierraseetin@gmail.com</a>
           </p>
           <p>
-            you can also find me on 
+            you can also find me on
             <a href="#" target="_blank" rel="noopener">linkedin</a>
-            and 
+            and
             <a href="#" target="_blank" rel="noopener">my film portfolio</a>.
           </p>
         </section>
-
       </main>
 
       <footer class="footer">
         <p>© 2025 sierra seetin</p>
       </footer>
     </div>
-
-    <!-- tiny JS just to toggle between about / work / contact panels -->
-    <script>
-      const buttons = document.querySelectorAll('.nav-link');
-      const panels = document.querySelectorAll('.section-panel');
-
-      buttons.forEach(button => {
-        button.addEventListener('click', () => {
-          const target = button.getAttribute('data-section');
-
-          // active button state
-          buttons.forEach(b => b.classList.remove('active'));
-          button.classList.add('active');
-
-          // show matching panel
-          panels.forEach(panel => {
-            if (panel.id === target) {
-              panel.classList.add('visible');
-            } else {
-              panel.classList.remove('visible');
-            }
-          });
-        });
-      });
-    </script>
   </body>
 </html>
