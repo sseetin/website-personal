@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Sierra Seetin</title>
+  <link rel="icon" href="ssfavicon.ico" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="index.html">
+        <div class="brand-name">Sierra Seetin</div>
+        <div class="brand-title">Filmmaker | Creative Producer</div>
+      </a>
+
+      <nav class="nav">
+        <a class="nav-link" href="work.html">Work</a>
+        <a class="nav-link" href="index.html#about">About</a>
+        <a class="nav-link" href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page">
+
+    <!-- HELLO -->
+    <section class="contact-intro">
+      <h1 class="hello" aria-label="hello">
+        <span>h</span><span>e</span><span>l</span><span>l</span><span>o</span>
+      </h1>
+    </section>
+
+    <!-- BIO + HEADSHOT -->
+    <section class="contact-layout">
+      <div class="contact-bio">
+        <p>
+          I’m Sierra Seetin — a filmmaker and creative producer working across
+          short narrative, experimental, and independent projects.
+          I’m drawn to emotionally grounded storytelling, collaborative sets,
+          and building cinematic worlds from concept through post.
+        </p>
+
+        <p>
+          If you're reaching out about producing, directing,
+          development, festival strategy, or creative collaboration —
+          I’d love to connect.
+        </p>
+      </div>
+
+      <div class="contact-headshot">
+        <img src="images/headshot.jpeg" alt="Sierra Seetin headshot" />
+      </div>
+    </section>
+
+    <!-- LINKS -->
+    <section class="contact-links-row">
+      <a href="mailto:sierraseetin@gmail.com">sierraseetin@gmail.com</a>
+      <span class="sep">/</span>
+      <a href="https://www.youtube.com/@sierra-seetin" target="_blank">YouTube</a>
+      <span class="sep">/</span>
+      <a href="https://www.linkedin.com/in/sierraseetin/" target="_blank">LinkedIn</a>
+    </section>
+
+    <!-- FORM -->
+    <section class="contact-form-wrap">
+      <h2 class="text-title">send a message</h2>
+
+      <form class="contact-form" id="contactForm">
+        <input type="text" name="name" placeholder="Name" required />
+        <input type="email" name="email" placeholder="Email" required />
+        <input type="text" name="subject" placeholder="Subject" required />
+        <textarea name="message" rows="6" placeholder="Message" required></textarea>
+        <button class="btn" type="submit">Send</button>
+      </form>
+    </section>
+
+    <footer class="footer">
+      <p>© 2026 Sierra Seetin. All rights reserved.</p>
+    </footer>
+
+  </main>
+
+  <script>
+    const form = document.getElementById("contactForm");
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const data = new FormData(form);
+      const mailSubject = encodeURIComponent(data.get("subject"));
+      const mailBody = encodeURIComponent(
+        `Name: ${data.get("name")}\nEmail: ${data.get("email")}\n\n${data.get("message")}`
+      );
+
+      window.location.href =
+        `mailto:sierraseetin@gmail.com?subject=${mailSubject}&body=${mailBody}`;
+    });
+  </script>
+
+</body>
+</html>
