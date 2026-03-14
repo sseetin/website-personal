@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sierra Seetin</title>
+  <link rel="icon" href="ssfavicon.ico" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="index.html">
+        <div class="brand-name">Sierra Seetin</div>
+        <div class="brand-title">Filmmaker | Creative Producer</div>
+      </a>
+
+      <nav class="nav">
+        <a class="nav-link" href="work.html">Work</a>
+        <a class="nav-link" href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page">
+
+    <!-- PROJECT GRID -->
+    <section class="grid-section">
+
+      <div class="grid">
+
+        <!-- 9 Projects -->
+        <!-- Just edit titles/types as needed -->
+
+        <a class="card" href="work.html#beneath-the-nail">
+          <div class="media">
+            <div class="skeleton"></div>
+            <img class="thumb" src="images/beneaththenail-1.png" alt="A woman and two girls work in a nail salon"lazy" />
+          </div>
+          <div class="overlay">
+            <div>
+              <div class="overlay-title">Beneath The Nail</div>
+              <div class="overlay-type">Short Film</div>
+            </div>
+          </div>
+        </a>
+
+        <a class="card" href="work.html#moc-mac">
+          <div class="media">
+            <div class="skeleton"></div>
+            <img class="thumb" src="images/mocmac-2.png" alt="Close up image of traditional vietnamese food" loading="lazy" />
+          </div>
+          <div class="overlay">
+            <div>
+              <div class="overlay-title">mộc mạc NYC - Alex Yem</div>
+              <div class="overlay-type">YouTube Documentary</div>
+            </div>
+          </div>
+        </a>
+
+        <a class="card" href="work.html#dubaku-brothers">
+          <div class="media">
+            <div class="skeleton"></div>
+            <img class="thumb" src="images/dubaku-2.png" alt="Two young boys eat lunch" loading="lazy" />
+          </div>
+          <div class="overlay">
+            <div>
+              <div class="overlay-title">Dubaku Brothers</div>
+              <div class="overlay-type">Short Film</div>
+            </div>
+          </div>
+        </a>
+
+        <a class="card" href="work.html#auld-acquaintance">
+          <div class="media">
+            <div class="skeleton"></div>
+            <img class="thumb" src="images/auld-1.png" alt="A man and woman talk in the kitchen" loading="lazy" />
+          </div>
+          <div class="overlay">
+            <div>
+              <div class="overlay-title">Auld Acquaintance</div>
+              <div class="overlay-type">Short Film</div>
+            </div>
+          </div>
+        </a>
+
+        <a class="card" href="work.html#the-little-guy">
+          <div class="media">
+            <div class="skeleton"></div>
+            <img class="thumb" src="images/littleguy-2.png" alt="Profile shot of 3 men" loading="lazy" />
+          </div>
+          <div class="overlay">
+            <div>
+              <div class="overlay-title">The Little Guy</div>
+              <div class="overlay-type">Short Film</div>
+            </div>
+          </div>
+        </a>
+
+        <a class="card" href="#">
+          <div class="media">
+            <div class="skeleton"></div>
+            <img class="thumb" src="images/theyhaveablast-1.png" alt="Medium Close up of an older man and woman" loading="lazy" />
+          </div>
+          <div class="overlay">
+            <div>
+              <div class="overlay-title">They Have A Blast</div>
+              <div class="overlay-type">Short Film</div>
+            </div>
+          </div>
+        </a>
+
+
+         <a class="card" href="work.html#beauty-marks">
+          <div class="media">
+            <div class="skeleton"></div>
+            <img class="thumb" src="images/beautymarks-1.png" alt="close up of a woman smiling" loading="lazy" />
+          </div>
+          <div class="overlay">
+            <div>
+              <div class="overlay-title">Beauty Marks</div>
+              <div class="overlay-type">Short Film</div>
+            </div>
+          </div>
+        </a>
+
+        <a class="card" href="work.html#full-filmography">
+          <div class="media">
+            <div class="skeleton"></div>
+            <img class="thumb" src="images/2009-1.png" alt="Two girls face another on the Brooklyn Bridge" loading="lazy" />
+          </div>
+          <div class="overlay">
+            <div>
+              <div class="overlay-title">2009</div>
+              <div class="overlay-type">Short Film</div>
+            </div>
+          </div>
+        </a>
+
+
+
+        <a class="card" href="work.html#full-filmography">
+          <div class="media">
+            <div class="skeleton"></div>
+            <img class="thumb" src="images/nightmoves-1.jpeg" alt="A figure in a biohzard suit walks in the dark" loading="lazy" />
+          </div>
+          <div class="overlay">
+            <div>
+              <div class="overlay-title">Night Moves</div>
+              <div class="overlay-type">Short Film</div>
+            </div>
+          </div>
+        </a>
+
+  
+
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>© 2026 Sierra Seetin. All rights reserved.</p>
+    </footer>
+
+  </main>
+
+  <script>
+    const cards = document.querySelectorAll(".card");
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("in-view");
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    cards.forEach((c) => io.observe(c));
+
+    const imgs = document.querySelectorAll(".thumb");
+    imgs.forEach((img) => {
+      const done = () => img.closest(".card").classList.add("img-loaded");
+      if (img.complete) done();
+      else img.addEventListener("load", done, { once: true });
+    });
+  </script>
+
+</body>
+</html>

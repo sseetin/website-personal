@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Photography · Sierra Seetin</title>
+    <link rel="icon" href="ssfavicon.ico" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body class="photography-page">
+    <header class="topbar">
+      <div class="topbar-inner">
+        <a class="brand" href="index.html">
+          <div class="brand-name">Sierra Seetin</div>
+          <div class="brand-title">Filmmaker | Creative Producer</div>
+        </a>
+
+        <nav class="nav">
+          <a class="nav-link" href="work.html">Work</a>
+          <a class="nav-link" href="contact.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="page photography-shell">
+      <section class="photography-hero">
+        <p class="photography-page-kicker">Photography</p>
+        <h1 class="photography-page-title">Darkroom</h1>
+      </section>
+
+      <section class="photography-gallery-block">
+  <section class="photography-gallery-page" data-photo-gallery>
+    <div class="photography-gallery-stage">
+      <figure class="photography-gallery-slide active">
+        <img src="images/photography/sseetin-darkroom-1.jpg" alt="Darkroom photograph 1 by Sierra Seetin" />
+      </figure>
+      <figure class="photography-gallery-slide">
+        <img src="images/photography/sseetin-darkroom-9.jpg" alt="Darkroom photograph 2 by Sierra Seetin" />
+      </figure>
+      <figure class="photography-gallery-slide">
+        <img src="images/photography/sseetin-darkroom-2.jpg" alt="Darkroom photograph 3 by Sierra Seetin" />
+      </figure>
+      <figure class="photography-gallery-slide">
+        <img src="images/photography/sseetin-darkroom-5.jpg" alt="Darkroom photograph 4 by Sierra Seetin" />
+      </figure>
+      <figure class="photography-gallery-slide">
+        <img src="images/photography/sseetin-darkroom-6.jpg" alt="Darkroom photograph 5 by Sierra Seetin" />
+      </figure>
+      <figure class="photography-gallery-slide">
+        <img src="images/photography/sseetin-darkroom-10.jpg" alt="Darkroom photograph 6 by Sierra Seetin" />
+      </figure>
+    </div>
+
+    <div class="photography-gallery-dots" aria-label="Darkroom gallery navigation">
+      <button class="photography-gallery-dot active" type="button" aria-label="View darkroom photograph 1"></button>
+      <button class="photography-gallery-dot" type="button" aria-label="View darkroom photograph 2"></button>
+      <button class="photography-gallery-dot" type="button" aria-label="View darkroom photograph 3"></button>
+      <button class="photography-gallery-dot" type="button" aria-label="View darkroom photograph 4"></button>
+      <button class="photography-gallery-dot" type="button" aria-label="View darkroom photograph 5"></button>
+      <button class="photography-gallery-dot" type="button" aria-label="View darkroom photograph 6"></button>
+    </div>
+  </section>
+</section>
+
+<section class="photography-hero photography-subhead">
+  <p class="photography-page-kicker">Photography</p>
+  <h2 class="photography-page-title">Digital</h2>
+</section>
+
+<section class="photography-gallery-block">
+  <section class="photography-gallery-page" data-photo-gallery>
+    <div class="photography-gallery-stage">
+      <figure class="photography-gallery-slide active">
+        <img src="images/photography/crit2-7.jpg" alt="Digital photograph 1 by Sierra Seetin" />
+      </figure>
+      <figure class="photography-gallery-slide">
+        <img src="images/photography/crit2-5.jpg" alt="Digital photograph 2 by Sierra Seetin" />
+      </figure>
+      <figure class="photography-gallery-slide">
+        <img src="images/photography/crit2-6.jpg" alt="Digital photograph 3 by Sierra Seetin" />
+      </figure>
+      <figure class="photography-gallery-slide">
+        <img src="images/photography/crit3-4.jpg" alt="Digital photograph 4 by Sierra Seetin" />
+      </figure>
+      <figure class="photography-gallery-slide">
+        <img src="images/photography/crit2-17.jpg" alt="Digital photograph 5 by Sierra Seetin" />
+      </figure>
+      <figure class="photography-gallery-slide">
+        <img src="images/photography/crit2-18.jpg" alt="Digital photograph 6 by Sierra Seetin" />
+      </figure>
+      <figure class="photography-gallery-slide">
+        <img src="images/photography/crit2-19.jpg" alt="Digital photograph 7 by Sierra Seetin" />
+      </figure>
+      <figure class="photography-gallery-slide">
+        <img src="images/photography/crit1-6.jpg" alt="Digital photograph 8 by Sierra Seetin" />
+      </figure>
+    </div>
+
+    <div class="photography-gallery-dots" aria-label="Digital gallery navigation">
+      <button class="photography-gallery-dot active" type="button" aria-label="View digital photograph 1"></button>
+      <button class="photography-gallery-dot" type="button" aria-label="View digital photograph 2"></button>
+      <button class="photography-gallery-dot" type="button" aria-label="View digital photograph 3"></button>
+      <button class="photography-gallery-dot" type="button" aria-label="View digital photograph 4"></button>
+      <button class="photography-gallery-dot" type="button" aria-label="View digital photograph 5"></button>
+      <button class="photography-gallery-dot" type="button" aria-label="View digital photograph 6"></button>
+      <button class="photography-gallery-dot" type="button" aria-label="View digital photograph 7"></button>
+      <button class="photography-gallery-dot" type="button" aria-label="View digital photograph 8"></button>
+    </div>
+  </section>
+</section>
+    </main>
+
+  <script>
+  const galleries = document.querySelectorAll("[data-photo-gallery]");
+
+  galleries.forEach((gallery) => {
+    const slides = gallery.querySelectorAll(".photography-gallery-slide");
+    const dots = gallery.querySelectorAll(".photography-gallery-dot");
+    let currentIndex = 0;
+    let intervalId;
+
+    const showSlide = (index) => {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle("active", i === index);
+      });
+
+      dots.forEach((dot, i) => {
+        dot.classList.toggle("active", i === index);
+      });
+
+      currentIndex = index;
+    };
+
+    const nextSlide = () => {
+      const nextIndex = (currentIndex + 1) % slides.length;
+      showSlide(nextIndex);
+    };
+
+    const startAutoplay = () => {
+      intervalId = window.setInterval(nextSlide, 4500);
+    };
+
+    const resetAutoplay = () => {
+      window.clearInterval(intervalId);
+      startAutoplay();
+    };
+
+    dots.forEach((dot, index) => {
+      dot.addEventListener("click", () => {
+        showSlide(index);
+        resetAutoplay();
+      });
+    });
+
+    showSlide(0);
+    startAutoplay();
+  });
+</script>
+  </body>
+</html>
